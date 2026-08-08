@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NoteFlow — Keep Your Thoughts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">✦</span>
+      <span>NoteFlow</span>
+    </div>
+
+    <div class="search-box">
+      <span>⌕</span>
+      <input type="text" id="searchInput" placeholder="Search notes...">
+    </div>
+
+    <button class="clear-btn" id="clearAllBtn">Clear all</button>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <p class="eyebrow">YOUR DIGITAL NOTEBOOK</p>
+      <h1>Capture your thoughts.<br><span>Keep them organized.</span></h1>
+      <p class="hero-text">
+        Create, edit and organize your notes in one simple place.
+      </p>
+    </section>
+
+    <section class="note-editor">
+
+      <input
+        type="text"
+        id="titleInput"
+        class="title-input"
+        placeholder="Title"
+      >
+
+      <textarea
+        id="descriptionInput"
+        placeholder="Take a note..."
+      ></textarea>
+
+      <div class="editor-footer">
+
+        <div class="colors">
+          <button class="color active" data-color="#fff4b8" style="background:#fff4b8"></button>
+          <button class="color" data-color="#d9f8e8" style="background:#d9f8e8"></button>
+          <button class="color" data-color="#dcecff" style="background:#dcecff"></button>
+          <button class="color" data-color="#f0ddff" style="background:#f0ddff"></button>
+          <button class="color" data-color="#ffe0e0" style="background:#ffe0e0"></button>
+        </div>
+
+        <button class="add-btn" id="addNoteBtn">
+          <span>+</span> Add Note
+        </button>
+
+      </div>
+    </section>
+
+    <section class="notes-section">
+
+      <div class="section-header">
+        <div>
+          <p class="section-label">COLLECTION</p>
+          <h2>Your Notes <span id="noteCount">0</span></h2>
+        </div>
+      </div>
+
+      <div id="notesContainer" class="notes-grid"></div>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h3>No notes yet</h3>
+        <p>Create your first note and start organizing your ideas.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
