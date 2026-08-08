@@ -1,13 +1,12 @@
-const Note = require("../models/Note")
+const mongoose = require("../models/Note")
 
-const getNotes = async(req,re) =>{
-    try{
-    const notes = await Note.find().sort({createdAt: -1})
-    res.json(notes)
-    }
-    catch(error){
-        res.status(500).json({message:"failed to get notes"})
-    }
-    
+const getnotes = async()=>{
+   try{
+    const notes = await Note.find().sort({createdAt:-1})
+    res.json(notes);
+   }
+   catch(error){
+    res.status(500).json({message:"failed to getnote"})
+   }
 }
-module.exports=getNotes
+module.exports=getnotes
