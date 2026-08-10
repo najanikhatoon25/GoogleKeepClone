@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api/notes";
+const API = "http://https://googlekeepclone-1.onrender.com/api/notes";
 
 const title = document.getElementById("titleInput");
 const description = document.getElementById("descriptionInput");
