@@ -1,20 +1,23 @@
-const note = require("../models/note");
-const Note = require("../models/Note")
+const Note = require("../models/Note");
 
-const updatenote = async () =>{
-    try{
-     const id = req.params.id;
-     const data = req.body
+const updatenote = async (req, res) => {
+  try {
+    const id = req.params.id;
 
-     const updatenote = await Note.findByIdAndUpdate(
-        id,
-        data,
-        {new:true}
-     );
-     res.json({message:"updated successfully"})
-    }
-    catch(error){
-    res.status(500).json({message:"failed to update"})
-    }
-}
-module.exports = updatenote
+    const updatedNote = await Note.findByIdAndUpdate(
+      id,
+      req.body,
+      { new: true }
+    );
+
+    res.json(updatedNote);
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      message: "Failed to update"
+    });
+  }
+};
+
+module.exports = updatenote;

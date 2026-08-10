@@ -1,12 +1,19 @@
-const Note = require ("../models/Note")
+const Note = require("../models/Note");
 
-const clearall = async () => {
-    try{
-        const Note = await Note.deleteMany();
-    res.json(200).json({message:"Note delete successfully"})
-    }
-    catch(error){
-        res.status(500).json({message:"failed to delet"})
-    }
-}
-module.exports = clearall
+const clearall = async (req, res) => {
+  try {
+    await Note.deleteMany({});
+
+    res.json({
+      message: "Notes deleted successfully"
+    });
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      message: "Failed to delete"
+    });
+  }
+};
+
+module.exports = clearall;
