@@ -1,5 +1,4 @@
-const API = "http://https://googlekeepclone-1.onrender.com/api/notes";
-
+const API = "https://googlekeepclone-1.onrender.com/api/notes";
 const title = document.getElementById("titleInput");
 const description = document.getElementById("descriptionInput");
 const addButton = document.getElementById("addNoteBtn");
